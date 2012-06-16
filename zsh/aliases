@@ -1,0 +1,115 @@
+# Auto extension stuff
+alias -s txt=vim
+alias -s c=vim
+alias -s cpp=vim
+alias -s h=vim
+alias -s py=vim
+alias -s errors=less
+alias -s error=less
+alias -s log=less
+alias -s png=gqview
+alias -s jpg=gqview
+alias -s gif=gqview
+alias -s pdf=evince
+
+# Normal stuff 
+alias -g G='| egrep --color=auto -n'
+alias l='ls -G'
+alias la='ls -alkh'
+alias lk='ls -lkh'
+alias name="uname -n"
+alias gh='fc -l 0 | grep'                                # grep history
+alias dh='dirs -v'                                       # directory history
+alias ag='alias | grep -i'                               # alias grep
+alias ..='cd ..'
+alias mem="free -m"
+alias l='ls -CF'
+alias cd..='cd ..'
+alias pa='ps aux'
+alias man='PAGER=less man -a'
+alias cdc='cd ~; clear'
+alias j='jobs'
+alias h='history'
+alias grep='egrep'
+alias ls='ls --color=auto'
+alias ll='ls -lh --color=auto'
+alias la='ls -a --color=auto'
+alias lsa='ls -ld .*' # List only file beginning with "."
+alias dt='dmesg | tail'
+alias c='clear'
+alias svim='sudo vim'
+alias nt='cd ~/.ntuavpn/ && sudo openvpn ntua-udp.ovpn'
+alias font='fc-cache -f -v'
+alias vlock='sudo vlock -n'
+
+# configs
+alias xmo='vim ~/.xmonad/xmonad.hs'
+alias so='source ~/.zshrc'
+alias za='vim ~/.zsh/aliases'
+alias z='vim ~/.zshrc'
+alias rconf='svim /etc/rc.conf'
+alias paconf='svim /etc/pacman.conf'
+
+# power
+alias off='dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop'
+alias boot='dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart'
+alias ram='dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend'
+alias disk='dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'
+
+
+
+# network
+alias wic='wicd-curses'
+alias wid='sudo rc.d restart wicd'
+alias net='sudo /etc/rc.d/network restart'
+
+# pacman
+alias updatedb='sudo updatedb'
+alias syu='sudo pacman -Syu'
+alias s='sudo pacman -S'
+alias u='sudo pacman -U' 
+alias q='pacman -Q'
+alias rncs='sudo pacman -Rncs'
+alias ss='pacman -Ss'
+alias qs='pacman -Qs'
+alias si='pacman -Si'
+alias qi='pacman -Qi'
+alias syy='sudo pacman -Syy'
+alias suu='sudo pacman -Suu'
+alias syyu='sudo pacman -Syyu'
+
+# build
+alias src='makepkg --source'
+alias pkg='makepkg -s'
+alias build='sudo extra-i686-build'
+alias rpac='rm -rf pkg/ src/'
+alias vp='vim PKGBUILD'
+alias repgr='cd $OME/ArchGR/i686/ && rm -rf adslgr32.db.tar.gz && repo-add adslgr32.db.tar.gz *.tar.*'
+
+# ssh
+alias fosl='ssh -i $HOME/.ssh/foss_rsa axil@fossl'
+alias fa='ssh -X -D 50001 -f -C -N axil@foss'
+alias cpfosl='scp -i $HOME/.ssh/foss_rsa'
+alias cpfos='scp -P 20022 -i $HOME/.ssh/foss_rsa'
+alias f='ssh -X -p 20022 -D 50001 -f -C -N -i $HOME/.ssh/foss_rsa axil@foss'
+alias fosl='ssh -X -i $HOME/.ssh/foss_rsa axil@fossl'
+alias fos='ssh -X -p 20022 -i $HOME/.ssh/foss_rsa axil@foss'
+alias sanimal='ssh animal'
+alias fosmountl='sshfs axil@fossl:/home/axil/ ~/fossntua/ -o IdentityFile=$HOME/.ssh/foss_rsa'
+alias fosmount='sshfs -P 20022 axil@foss:/home/axil/ ~/fossntua/ -o IdentityFile=$HOME/.ssh/foss_rsa'
+alias fosumount='sudo fusermount -u ~/fossntua'
+alias syncpak='rsync -r -h -P --port=20022 "ssh -i $HOME/.ssh/foss_rsa" axil@foss:~/aur/packages/* ~/aur/foss/'
+
+
+alias mv='nocorrect mv'                                  # no spelling correction for mv
+alias cp='nocorrect cp'                                  # no spelling correction for cp
+alias mkdir='nocorrect mkdir'                            # no spelling correction for mkdir
+
+#alias lockscreen='xscreensaver-command -lock'           # xscreensaver-lock
+
+# Global aliases -- These do not have to be
+# at the beginning of the command line.
+alias -g L='less'
+alias -g M='more'
+alias -g H='head'
+alias -g T='tail'
