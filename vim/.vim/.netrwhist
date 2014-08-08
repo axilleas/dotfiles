@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/axil/git/piwik-example/.git'
+let g:netrw_dirhist_2='/home/axil/edx/rottenpotatoes/app/helpers'
+let g:netrw_dirhist_3='/home/axil/edx/rottenpotatoes/app/controllers'

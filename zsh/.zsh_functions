@@ -1,0 +1,29 @@
+function venv2 () {
+    if [[ "x$1" == "x" ]]; then
+        echo "Usage: venv2 <virtualenv folder> (python2)"
+        echo "Possible venvs:"
+        ls ~/Venvs/
+    else
+        if [[ -f  "${HOME}/Venvs/$1/bin/activate" ]]; then
+            source "${HOME}/Venvs/$1/bin/activate"
+        else
+            virtualenv2 "${HOME}/Venvs/$1"
+            source "${HOME}/Venvs/$1/bin/activate"
+        fi
+    fi
+}
+
+function venv () {
+    if [[ "x$1" == "x" ]]; then
+        echo "Usage: venv <virtualenv folder> (python3)"
+        echo "Possible venvs:"
+        ls ~/Venvs/
+    else
+        if [[ -f  "${HOME}/Venvs/$1/bin/activate" ]]; then
+            source "${HOME}/Venvs/$1/bin/activate"
+        else
+            virtualenv "${HOME}/Venvs/$1"
+            source "${HOME}/Venvs/$1/bin/activate"
+        fi
+    fi
+}
